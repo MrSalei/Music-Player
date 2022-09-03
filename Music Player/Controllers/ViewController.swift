@@ -30,10 +30,14 @@ class ViewController: UIViewController {
         timeLabel.text = timeFormat(time: Double(timeSlider.value))
     }
     @IBAction func nextButtonPressed(_ sender: Any) {
-        
+        counter += 1
+        if counter == 4 { counter = 1 }
+        reset()
     }
     @IBAction func prevButtonPressed(_ sender: Any) {
-        
+        counter -= 1
+        if counter == 0 { counter = 3 }
+        reset()
     }
     
     private let colors = Colors()
@@ -82,6 +86,7 @@ class ViewController: UIViewController {
             self.timeLabel.text = self.timeFormat(time: time.seconds)
             self.timeSlider.value = Float(time.seconds)
         }
+        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     private func second() {
@@ -93,6 +98,7 @@ class ViewController: UIViewController {
             self.timeLabel.text = self.timeFormat(time: time.seconds)
             self.timeSlider.value = Float(time.seconds)
         }
+        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     private func third() {
@@ -104,6 +110,14 @@ class ViewController: UIViewController {
             self.timeLabel.text = self.timeFormat(time: time.seconds)
             self.timeSlider.value = Float(time.seconds)
         }
+        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+    }
+    
+    private func reset() {
+        player = nil
+        timeSlider.value = 0
+        timeLabel.text = "0:00"
+        setup(song: counter % 3)
     }
 
 }
