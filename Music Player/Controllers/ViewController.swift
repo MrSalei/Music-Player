@@ -42,12 +42,12 @@ class ViewController: UIViewController {
     }
     
     private let colors = Colors()
-    var player: AVPlayer?, counter = 1
+    private var player: AVPlayer?, counter = 1, obs: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
-        setup(song: counter % 3)
+        setup(song: counter)
     }
     
     private func setupBackground() {
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     private func setupPlayer() {
         songDurationLabel.text = timeFormat(time: (player?.currentItem?.asset.duration.seconds)!)
         timeSlider.maximumValue = Float(player?.currentItem?.asset.duration.seconds ?? 0)
-        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
+        obs = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
             self.timeLabel.text = self.timeFormat(time: time.seconds)
             self.timeSlider.value = Float(time.seconds)
         }
@@ -110,10 +110,10 @@ class ViewController: UIViewController {
     }
     
     private func reset() {
-        player?.pause()
+        player?.removeTimeObserver(obs!)
         timeSlider.value = 0
         timeLabel.text = "0:00"
-        setup(song: counter % 3)
+        setup(song: counter)
     }
 
 }
