@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var songDurationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func playButtonPressed(_ sender: Any) {
         if player?.timeControlStatus == .playing {
@@ -33,14 +35,20 @@ class ViewController: UIViewController {
         timeLabel.text = timeFormat(time: Double(timeSlider.value))
     }
     @IBAction func nextButtonPressed(_ sender: Any) {
-        counter += 1
-        if counter == 4 { counter = 1 }
-        reset()
+        next()
     }
     @IBAction func prevButtonPressed(_ sender: Any) {
-        counter -= 1
-        if counter == 0 { counter = 3 }
-        reset()
+        prev()
+    }
+    
+    @objc func swipedRight(_ gesture:UISwipeGestureRecognizer)
+    {
+        next()
+    }
+    
+    @objc func swipedLeft(_ gesture:UISwipeGestureRecognizer)
+    {
+        prev()
     }
     
     private let colors = Colors()
@@ -50,6 +58,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupBackground()
         setup(song: counter)
+        setupSwipe()
     }
     
     private func setupBackground() {
@@ -57,6 +66,15 @@ class ViewController: UIViewController {
         let backgroundLayer = colors.gl
         backgroundLayer!.frame = view.frame
         view.layer.insertSublayer(backgroundLayer!, at: 0)
+    }
+    
+    private func setupSwipe() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedRight(_:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipedLeft(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        view.addGestureRecognizer(swipeLeft)
+        view.addGestureRecognizer(swipeRight)
     }
     
     private func timeFormat(time: Double) -> String {
@@ -118,6 +136,18 @@ class ViewController: UIViewController {
         if wasPlaying {
             player?.play()
         }
+    }
+    
+    private func next() {
+        counter += 1
+        if counter == 4 { counter = 1 }
+        reset()
+    }
+    
+    private func prev() {
+        counter -= 1
+        if counter == 0 { counter = 3 }
+        reset()
     }
 
 }

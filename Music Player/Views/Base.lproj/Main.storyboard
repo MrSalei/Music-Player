@@ -118,7 +118,9 @@
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="f8h-Hh-7wi" id="KdT-IX-8Sy"/>
+                        <outlet property="nextButton" destination="zdp-0B-jai" id="s1y-bk-cU5"/>
                         <outlet property="playButton" destination="Uy3-dh-6sn" id="Q0f-Zz-71S"/>
+                        <outlet property="prevButton" destination="uQK-GA-txa" id="kXq-t6-Qpc"/>
                         <outlet property="songDurationLabel" destination="MZE-BB-BUl" id="xdI-Dw-OG8"/>
                         <outlet property="songImage" destination="Egj-Pc-VTQ" id="T0D-1d-LGK"/>
                         <outlet property="timeLabel" destination="ahp-ic-ytO" id="zeT-8Y-NT1"/>
