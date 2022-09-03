@@ -93,7 +93,6 @@
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
                             <constraint firstItem="f8h-Hh-7wi" firstAttribute="top" secondItem="Egj-Pc-VTQ" secondAttribute="bottom" constant="48" id="2bn-2I-jw6"/>
-                            <constraint firstItem="fEl-do-vDP" firstAttribute="trailing" secondItem="MZE-BB-BUl" secondAttribute="trailing" id="2eg-ki-yys"/>
                             <constraint firstItem="Egj-Pc-VTQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="7LV-yq-A6b"/>
                             <constraint firstItem="f8h-Hh-7wi" firstAttribute="trailing" secondItem="fEl-do-vDP" secondAttribute="trailing" id="8b8-QX-1bY"/>
                             <constraint firstItem="fEl-do-vDP" firstAttribute="top" secondItem="f8h-Hh-7wi" secondAttribute="bottom" constant="48" id="9Gi-Ea-mXr"/>
@@ -101,11 +100,13 @@
                             <constraint firstItem="f8h-Hh-7wi" firstAttribute="centerX" secondItem="fEl-do-vDP" secondAttribute="centerX" id="IKY-N7-ORR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uy3-dh-6sn" secondAttribute="bottom" constant="108" id="JGY-yl-lhl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zdp-0B-jai" secondAttribute="bottom" constant="108" id="JLh-g1-o90"/>
-                            <constraint firstItem="fEl-do-vDP" firstAttribute="leading" secondItem="ahp-ic-ytO" secondAttribute="leading" id="OUo-LT-EGD"/>
+                            <constraint firstItem="ahp-ic-ytO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UBM-Sh-tg5"/>
                             <constraint firstItem="f8h-Hh-7wi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Vh6-Ze-9jj"/>
                             <constraint firstItem="ahp-ic-ytO" firstAttribute="baseline" secondItem="MZE-BB-BUl" secondAttribute="firstBaseline" id="b0H-5n-CTI"/>
                             <constraint firstItem="Uy3-dh-6sn" firstAttribute="centerX" secondItem="fEl-do-vDP" secondAttribute="centerX" id="b3Q-hg-4kd"/>
                             <constraint firstItem="Uy3-dh-6sn" firstAttribute="leading" secondItem="uQK-GA-txa" secondAttribute="trailing" constant="30" id="eLu-9k-MYK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MZE-BB-BUl" secondAttribute="trailing" constant="20" id="fo6-mA-PoF"/>
+                            <constraint firstItem="MZE-BB-BUl" firstAttribute="top" secondItem="fEl-do-vDP" secondAttribute="bottom" constant="8" id="jA3-mE-2m6"/>
                             <constraint firstItem="Egj-Pc-VTQ" firstAttribute="centerX" secondItem="f8h-Hh-7wi" secondAttribute="centerX" id="kFd-pW-UWJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uQK-GA-txa" secondAttribute="bottom" constant="108" id="kOj-2O-0Dk"/>
                             <constraint firstItem="ahp-ic-ytO" firstAttribute="top" secondItem="fEl-do-vDP" secondAttribute="bottom" constant="8" id="kye-nO-WPt"/>
