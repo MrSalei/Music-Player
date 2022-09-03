@@ -16,6 +16,7 @@
 		4087633F28C337760038CAF4 /* LivingLife.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087633E28C337760038CAF4 /* LivingLife.mp3 */; };
 		4087634128C3377C0038CAF4 /* Royalty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087634028C3377C0038CAF4 /* Royalty.mp3 */; };
 		4087634328C337820038CAF4 /* UnderControl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087634228C337820038CAF4 /* UnderControl.mp3 */; };
+		4087634C28C3489F0038CAF4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087634B28C3489F0038CAF4 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4087633E28C337760038CAF4 /* LivingLife.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LivingLife.mp3; sourceTree = "<group>"; };
 		4087634028C3377C0038CAF4 /* Royalty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Royalty.mp3; sourceTree = "<group>"; };
 		4087634228C337820038CAF4 /* UnderControl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UnderControl.mp3; sourceTree = "<group>"; };
+		4087634B28C3489F0038CAF4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		4087634428C33D850038CAF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4087634A28C348930038CAF4 /* Additional */,
 				4087634828C33DCA0038CAF4 /* Photos */,
 				4087634528C33D8C0038CAF4 /* Songs */,
 			);
@@ -122,6 +125,14 @@
 				4087632A28C3373A0038CAF4 /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		4087634A28C348930038CAF4 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				4087634B28C3489F0038CAF4 /* Colors.swift */,
+			);
+			path = Additional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4087632F28C3373A0038CAF4 /* ViewController.swift in Sources */,
+				4087634C28C3489F0038CAF4 /* Colors.swift in Sources */,
 				4087632B28C3373A0038CAF4 /* AppDelegate.swift in Sources */,
 				4087632D28C3373A0038CAF4 /* SceneDelegate.swift in Sources */,
 			);

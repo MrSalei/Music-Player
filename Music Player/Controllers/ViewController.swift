@@ -36,17 +36,20 @@ class ViewController: UIViewController {
         
     }
     
-    var player: AVPlayer?
+    private let colors = Colors()
+    var player: AVPlayer?, counter = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "LivingLife", ofType: "mp3")!))
-        songDurationLabel.text = timeFormat(time: (player?.currentItem?.asset.duration.seconds)!)
-        timeSlider.maximumValue = Float(player?.currentItem?.asset.duration.seconds ?? 0)
-        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
-            self.timeLabel.text = self.timeFormat(time: time.seconds)
-            self.timeSlider.value = Float(time.seconds)
-        }
+        setupBackground()
+        setup(song: counter % 3)
+    }
+    
+    private func setupBackground() {
+        view.backgroundColor = UIColor.clear
+        let backgroundLayer = colors.gl
+        backgroundLayer!.frame = view.frame
+        view.layer.insertSublayer(backgroundLayer!, at: 0)
     }
     
     private func timeFormat(time: Double) -> String {
@@ -58,7 +61,49 @@ class ViewController: UIViewController {
             return "\(minutes):\(seconds)"
         }
     }
-
+    
+    private func setup(song: Int) {
+        switch song {
+            case 1:
+                first()
+            case 2:
+                second()
+            default:
+                third()
+        }
+    }
+    
+    private func first() {
+        songImage.image = UIImage(named: "1")
+        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "LivingLife", ofType: "mp3")!))
+        songDurationLabel.text = timeFormat(time: (player?.currentItem?.asset.duration.seconds)!)
+        timeSlider.maximumValue = Float(player?.currentItem?.asset.duration.seconds ?? 0)
+        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
+            self.timeLabel.text = self.timeFormat(time: time.seconds)
+            self.timeSlider.value = Float(time.seconds)
+        }
+    }
+    
+    private func second() {
+        songImage.image = UIImage(named: "2")
+        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "Royalty", ofType: "mp3")!))
+        songDurationLabel.text = timeFormat(time: (player?.currentItem?.asset.duration.seconds)!)
+        timeSlider.maximumValue = Float(player?.currentItem?.asset.duration.seconds ?? 0)
+        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
+            self.timeLabel.text = self.timeFormat(time: time.seconds)
+            self.timeSlider.value = Float(time.seconds)
+        }
+    }
+    
+    private func third() {
+        songImage.image = UIImage(named: "3")
+        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "UnderControl", ofType: "mp3")!))
+        songDurationLabel.text = timeFormat(time: (player?.currentItem?.asset.duration.seconds)!)
+        timeSlider.maximumValue = Float(player?.currentItem?.asset.duration.seconds ?? 0)
+        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1000), queue: DispatchQueue.main) { time in
+            self.timeLabel.text = self.timeFormat(time: time.seconds)
+            self.timeSlider.value = Float(time.seconds)
+        }
+    }
 
 }
-
