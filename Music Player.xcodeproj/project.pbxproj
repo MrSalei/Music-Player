@@ -13,6 +13,9 @@
 		4087633228C3373A0038CAF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087633028C3373A0038CAF4 /* Main.storyboard */; };
 		4087633428C3373D0038CAF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4087633328C3373D0038CAF4 /* Assets.xcassets */; };
 		4087633728C3373D0038CAF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087633528C3373D0038CAF4 /* LaunchScreen.storyboard */; };
+		4087633F28C337760038CAF4 /* LivingLife.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087633E28C337760038CAF4 /* LivingLife.mp3 */; };
+		4087634128C3377C0038CAF4 /* Royalty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087634028C3377C0038CAF4 /* Royalty.mp3 */; };
+		4087634328C337820038CAF4 /* UnderControl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4087634228C337820038CAF4 /* UnderControl.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4087633328C3373D0038CAF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4087633628C3373D0038CAF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4087633828C3373D0038CAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4087633E28C337760038CAF4 /* LivingLife.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LivingLife.mp3; sourceTree = "<group>"; };
+		4087634028C3377C0038CAF4 /* Royalty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Royalty.mp3; sourceTree = "<group>"; };
+		4087634228C337820038CAF4 /* UnderControl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UnderControl.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		4087632928C3373A0038CAF4 /* Music Player */ = {
 			isa = PBXGroup;
 			children = (
-				4087632A28C3373A0038CAF4 /* AppDelegate.swift */,
-				4087632C28C3373A0038CAF4 /* SceneDelegate.swift */,
-				4087632E28C3373A0038CAF4 /* ViewController.swift */,
-				4087633028C3373A0038CAF4 /* Main.storyboard */,
-				4087633328C3373D0038CAF4 /* Assets.xcassets */,
-				4087633528C3373D0038CAF4 /* LaunchScreen.storyboard */,
 				4087633828C3373D0038CAF4 /* Info.plist */,
+				4087634928C33DD40038CAF4 /* Application */,
+				4087634728C33DB30038CAF4 /* Controllers */,
+				4087634628C33DA10038CAF4 /* Views */,
+				4087634428C33D850038CAF4 /* Models */,
 			);
 			path = "Music Player";
+			sourceTree = "<group>";
+		};
+		4087634428C33D850038CAF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4087634828C33DCA0038CAF4 /* Photos */,
+				4087634528C33D8C0038CAF4 /* Songs */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4087634528C33D8C0038CAF4 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				4087634228C337820038CAF4 /* UnderControl.mp3 */,
+				4087634028C3377C0038CAF4 /* Royalty.mp3 */,
+				4087633E28C337760038CAF4 /* LivingLife.mp3 */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
+		4087634628C33DA10038CAF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4087633528C3373D0038CAF4 /* LaunchScreen.storyboard */,
+				4087633028C3373A0038CAF4 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4087634728C33DB30038CAF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4087632E28C3373A0038CAF4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4087634828C33DCA0038CAF4 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				4087633328C3373D0038CAF4 /* Assets.xcassets */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		4087634928C33DD40038CAF4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4087632C28C3373A0038CAF4 /* SceneDelegate.swift */,
+				4087632A28C3373A0038CAF4 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4087633728C3373D0038CAF4 /* LaunchScreen.storyboard in Resources */,
+				4087633F28C337760038CAF4 /* LivingLife.mp3 in Resources */,
 				4087633428C3373D0038CAF4 /* Assets.xcassets in Resources */,
+				4087634328C337820038CAF4 /* UnderControl.mp3 in Resources */,
+				4087634128C3377C0038CAF4 /* Royalty.mp3 in Resources */,
 				4087633228C3373A0038CAF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
