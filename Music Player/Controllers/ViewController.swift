@@ -19,10 +19,12 @@ class ViewController: UIViewController {
     @IBAction func playButtonPressed(_ sender: Any) {
         if player?.timeControlStatus == .playing {
             player?.pause()
+            wasPlaying = false
             playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
         else {
             player?.play()
+            wasPlaying = true
             playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
     }
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     private let colors = Colors()
-    private var player: AVPlayer?, counter = 1, obs: Any?
+    private var player: AVPlayer?, counter = 1, obs: Any?, wasPlaying = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +108,6 @@ class ViewController: UIViewController {
             self.timeLabel.text = self.timeFormat(time: time.seconds)
             self.timeSlider.value = Float(time.seconds)
         }
-        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     private func reset() {
@@ -114,6 +115,9 @@ class ViewController: UIViewController {
         timeSlider.value = 0
         timeLabel.text = "0:00"
         setup(song: counter)
+        if wasPlaying {
+            player?.play()
+        }
     }
 
 }
